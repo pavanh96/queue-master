@@ -72,4 +72,4 @@ jobs:
    #     tag_with_ref: true
    #     tag_with_sha: true
         path: docker/queue-master
-        dockerfile: docker/queue-master/Dockerfile
+        dockerfile: ./Dockerfile
