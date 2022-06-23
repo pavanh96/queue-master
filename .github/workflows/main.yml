@@ -36,9 +36,6 @@ jobs:
     - name: Build jar files
       run: ./scripts/build.sh
       
-    - name: Build with Maven
-      run: mvn -B -DskipTests package --file pom.xml
-
     #
     #
     # Unit test
@@ -67,7 +64,7 @@ jobs:
     #
     # Push to dockerhub
     - name: Push to Docker Hub
-      uses: docker/build-push-action@v1
+      uses: mr-smithers-excellent/docker-build-push@v5
       if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/master'
       with:
         registry: docker.io
